@@ -355,5 +355,16 @@ roles as a Data Scientist, where I can apply statistical methodologies to solve 
     // Current year footer
     document.getElementById('year').textContent = new Date().getFullYear();
   </script>
+   // Site views (local storage)
+  let views = localStorage.getItem("page_views");
+  views = views ? Number(views) + 1 : 1;
+  localStorage.setItem("page_views", views);
+  document.getElementById("viewCount").innerText = views;
+
+  // Auto-hide alert after 7s
+  setTimeout(() => {
+    document.getElementById("alertBox").style.display = "none";
+  }, 7000);
+</script>
 </body>
 </html>
